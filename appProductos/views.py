@@ -25,3 +25,14 @@ def verProductos(request, idCategoria):
     }
     # renderizar 
     return render(request, 'productos/productos.html', context)
+def verProducto(request, idProd, msj = None):
+    #consultar
+    idProd = int(idProd)
+    regProductos = Producto.objects.get(id= idProd)
+    #ensamblar context
+    context ={
+            'producto' : regProducto,
+            'titulo' : 'detalles de '+ str(regProducto.nombre),
+    }
+    if msj:
+        context['']
