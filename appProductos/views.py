@@ -25,7 +25,7 @@ def verProductos(request, idCategoria):
     }
     # renderizar 
     return render(request, 'productos/productos.html', context)
-def verProducto(request, idProd, msj = None):
+def regProducto(request, idProd, msj = None):
     #consultar
     idProd = int(idProd)
     regProductos = Producto.objects.get(id= idProd)
@@ -35,4 +35,6 @@ def verProducto(request, idProd, msj = None):
             'titulo' : 'detalles de '+ str(regProducto.nombre),
     }
     if msj:
-        context['']
+        context['mensaje']= msj
+    #renderizar
+    return render(request= 'productos/producto.htnl', context)
