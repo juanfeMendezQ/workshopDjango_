@@ -37,4 +37,4 @@ def regProducto(request, idProd, msj = None):
     if msj:
         context['mensaje']= msj
     #renderizar
-    return render(request= 'productos/producto.htnl', context)
+    return render(request, 'productos/productos.html', context)
